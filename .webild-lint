@@ -1,0 +1,11 @@
+src/components/Layout.tsx
+src/components/sections/contact/ContactUnderlineForm.tsx
+src/components/sections/faq/FaqHairlineIndex.tsx
+src/components/sections/features/ProcessBentoPanels.tsx
+src/components/sections/features/ServicesGhostList.tsx
+src/components/sections/footer/FooterWordmarkLanding.tsx
+src/components/sections/gallery/GalleryWordPanels.tsx
+src/components/sections/hero/HeroShapeSplit.tsx
+src/components/sections/statement/CtaFloatingScreens.tsx
+src/components/sections/testimonial/TestimonialPortraitQuote.tsx
+src/pages/HomePage.tsx
