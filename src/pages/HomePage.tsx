@@ -36,7 +36,7 @@ export default function HomePage() {
         brand="VEYRO STUDIO"
       />
 
-      <div id="hero" data-webild-section="HeroShapeSplit" data-webild-section-id="HeroShapeSplit-1" data-section="hero" className="relative z-[45]">
+      <div id="hero" data-webild-section="HeroShapeSplit" data-webild-section-id="HeroShapeSplit-1" data-section="hero" className="relative z-[45] bg-[#F6F5F0]">
         <HeroShapeSplit
           tag="00 / INTRO"
           title="Bisnis yang baik, layak hadir dengan baik."
@@ -54,7 +54,7 @@ export default function HomePage() {
         />
       </div>
 
-      <div id="gallery" data-webild-section="GalleryWordPanels" data-webild-section-id="GalleryWordPanels-1" data-section="gallery" className="relative z-[45]" data-scene>
+      <div id="gallery" data-webild-section="GalleryWordPanels" data-webild-section-id="GalleryWordPanels-1" data-section="gallery" className="relative z-[45] bg-[#E8EDE5]" data-scene>
         <GalleryWordPanels
           label="02 / Karya Pilihan"
           title="Kualitas dalam setiap piksel"
@@ -98,7 +98,7 @@ export default function HomePage() {
         />
       </div>
 
-      <div id="services" data-webild-section="ServicesGhostList" data-webild-section-id="ServicesGhostList-1" data-section="services" className="relative z-[45]">
+      <div id="services" data-webild-section="ServicesGhostList" data-webild-section-id="ServicesGhostList-1" data-section="services" className="relative z-[45] bg-[#F6F5F0]">
         <ServicesGhostList
           tag="Layanan Utama"
           items={[
@@ -131,7 +131,7 @@ export default function HomePage() {
         />
       </div>
 
-      <div id="process" data-webild-section="ProcessBentoPanels" data-webild-section-id="ProcessBentoPanels-1" data-section="process" className="relative z-[45]">
+      <div id="process" data-webild-section="ProcessBentoPanels" data-webild-section-id="ProcessBentoPanels-1" data-section="process" className="relative z-[45] bg-[#E8EDE5]">
         <ProcessBentoPanels
           tag="04 / Pendekatan"
           title="Rapi dari awal hingga rilis"
@@ -157,7 +157,7 @@ export default function HomePage() {
         />
       </div>
 
-      <div id="cta" data-webild-section="CtaFloatingScreens" data-webild-section-id="CtaFloatingScreens-1" data-section="cta" className="relative z-[45]">
+      <div id="cta" data-webild-section="CtaFloatingScreens" data-webild-section-id="CtaFloatingScreens-1" data-section="cta" className="relative z-[45] bg-[#F6F5F0]">
         <CtaFloatingScreens
           tag="Mulai Proyek"
           title="Setiap hal baik dimulai dari percakapan."
@@ -203,7 +203,7 @@ export default function HomePage() {
         />
       </div>
 
-      <div id="testimonial" data-webild-section="TestimonialPortraitQuote" data-webild-section-id="TestimonialPortraitQuote-1" data-section="testimonial" className="relative z-[45]">
+      <div id="testimonial" data-webild-section="TestimonialPortraitQuote" data-webild-section-id="TestimonialPortraitQuote-1" data-section="testimonial" className="relative z-[45] bg-[#F6F5F0]">
         <TestimonialPortraitQuote
           label="Kata Klien Kami"
           title="Dipercaya Oleh Bisnis Berdedikasi"
@@ -233,7 +233,7 @@ export default function HomePage() {
         />
       </div>
 
-      <div id="faq" data-webild-section="FaqHairlineIndex" data-webild-section-id="FaqHairlineIndex-1" data-section="faq" className="relative z-[45]">
+      <div id="faq" data-webild-section="FaqHairlineIndex" data-webild-section-id="FaqHairlineIndex-1" data-section="faq" className="relative z-[45] bg-[#E8EDE5]">
         <FaqHairlineIndex
           tag="06 / PERTANYAAN"
           title="Hal yang sering ditanyakan"
@@ -262,7 +262,7 @@ export default function HomePage() {
         />
       </div>
 
-      <div id="contact" data-webild-section="ContactUnderlineForm" data-webild-section-id="ContactUnderlineForm-1" data-section="contact" className="relative z-[45]">
+      <div id="contact" data-webild-section="ContactUnderlineForm" data-webild-section-id="ContactUnderlineForm-1" data-section="contact" className="relative z-[45] bg-[#F6F5F0]">
         <ContactUnderlineForm
           title="Mulai percakapan proyek Anda"
           fields={[

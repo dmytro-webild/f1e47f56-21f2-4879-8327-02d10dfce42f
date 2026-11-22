@@ -20,35 +20,24 @@ type HeroShapeSplitProps = {
   className?: string;
 };
 
-const RollLink = ({ text, href, show, delay }: Button & { show: boolean; delay: number }) => {
+const HeroButton = ({ text, href, variant, show, delay }: Button & { variant: "primary" | "secondary"; show: boolean; delay: number }) => {
   const reduce = useReducedMotion();
   const { ease, slow } = useKitMotion();
-  const letters = Array.from(text);
+  const isPrimary = variant === "primary";
   return (
     <motion.a
       href={href}
       initial={reduce ? false : { opacity: 0, y: 16 }}
       animate={show ? { opacity: 1, y: 0 } : undefined}
       transition={{ duration: slow, ease, delay }}
-      className="btn-link group w-full max-w-[15.5rem] justify-between gap-[1rem] border-b border-foreground/25 py-[0.75rem] lg:w-[12.75rem] lg:py-[0.5rem]"
+      className={cn(
+        "group inline-flex min-h-[2.875rem] items-center justify-center gap-[0.75rem] px-[1.75rem] font-mono text-[length:var(--text-label)] uppercase tracking-[var(--label-tracking)] transition-all duration-300",
+        isPrimary ? "btn-primary" : "btn-secondary"
+      )}
     >
-      <div className="relative min-w-0 overflow-hidden">
-        <p className="sr-only">{text}</p>
-        <div aria-hidden="true" className="flex">
-          {letters.map((char, i) => (
-            <div
-              key={i}
-              style={{ transitionDelay: `${i * 0.015}s` }}
-              className="relative whitespace-pre transition-transform duration-[450ms] ease-[cubic-bezier(0.19,1,0.22,1)] group-hover:-translate-y-full motion-reduce:transition-none"
-            >
-              {char}
-              <div className="absolute left-0 top-full">{char}</div>
-            </div>
-          ))}
-        </div>
-      </div>
-      <svg aria-hidden="true" viewBox="0 0 12 12" fill="none" className="size-[0.75rem] shrink-0 transition-transform duration-[450ms] ease-[cubic-bezier(0.19,1,0.22,1)] group-hover:-translate-y-[2px] group-hover:translate-x-[2px]">
-        <path d="M2.5 9.5l7-7M3.5 2.5h6v6" stroke="currentColor" strokeWidth="1" />
+      <span className="btn-label font-semibold">{text}</span>
+      <svg aria-hidden="true" viewBox="0 0 12 12" fill="none" className="size-[0.75rem] shrink-0 transition-transform duration-300 group-hover:translate-x-[2px]">
+        <path d="M2.5 9.5l7-7M3.5 2.5h6v6" stroke="currentColor" strokeWidth="1.2" />
       </svg>
     </motion.a>
   );
@@ -136,9 +125,9 @@ const HeroShapeSplit = ({
             )}
 
             {(primaryButton || secondaryButton) && (
-              <div className="mt-[1.5rem] flex w-full flex-col lg:mt-[2.25rem] lg:flex-row lg:flex-wrap lg:gap-x-[1.5rem] lg:gap-y-[1rem]">
-                {primaryButton && <RollLink {...primaryButton} show={go} delay={0.2} />}
-                {secondaryButton && <RollLink {...secondaryButton} show={go} delay={0.26} />}
+              <div className="mt-[1.5rem] flex w-full flex-col gap-3 lg:mt-[2.25rem] lg:flex-row lg:flex-wrap lg:items-center">
+                {primaryButton && <HeroButton {...primaryButton} variant="primary" show={go} delay={0.2} />}
+                {secondaryButton && <HeroButton {...secondaryButton} variant="secondary" show={go} delay={0.26} />}
               </div>
             )}
           </div>

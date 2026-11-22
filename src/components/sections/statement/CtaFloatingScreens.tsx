@@ -67,19 +67,17 @@ const FloatingScreen = ({ item, index, progress, live }: { item: Screen; index: 
   );
 };
 
-const RollLink = ({ button }: { button: Button }) => (
+const CtaButton = ({ button, variant = "primary" }: { button: Button; variant?: "primary" | "secondary" }) => (
   <a
     href={button.href}
-    className="group btn-link w-[clamp(13rem,19vw,17.5rem)] justify-between border-b border-[color:var(--input)] py-[0.75rem]"
+    className={cn(
+      "group inline-flex min-h-[2.875rem] items-center justify-center gap-[0.75rem] px-[1.75rem] font-mono text-[length:var(--text-label)] uppercase tracking-[var(--label-tracking)] transition-all duration-300",
+      variant === "primary" ? "btn-primary" : "btn-secondary"
+    )}
   >
-    <div className="relative h-[1.2em] overflow-hidden">
-      <p className="whitespace-nowrap transition-transform duration-[450ms] ease-[cubic-bezier(0.19,1,0.22,1)] group-hover:-translate-y-full motion-reduce:transition-none">{button.text}</p>
-      <p aria-hidden="true" className="absolute left-0 top-full whitespace-nowrap transition-transform duration-[450ms] ease-[cubic-bezier(0.19,1,0.22,1)] group-hover:-translate-y-full motion-reduce:transition-none">
-        {button.text}
-      </p>
-    </div>
-    <svg aria-hidden="true" viewBox="0 0 12 12" fill="none" className="size-[0.8rem] shrink-0 transition-transform duration-[450ms] ease-[cubic-bezier(0.19,1,0.22,1)] group-hover:-translate-y-[2px] group-hover:translate-x-[2px]">
-      <path d="M3 9L9 3M4 3h5v5" stroke="currentColor" strokeWidth="1" />
+    <span className="btn-label font-semibold">{button.text}</span>
+    <svg aria-hidden="true" viewBox="0 0 12 12" fill="none" className="size-[0.8rem] shrink-0 transition-transform duration-300 group-hover:translate-x-[2px]">
+      <path d="M3 9L9 3M4 3h5v5" stroke="currentColor" strokeWidth="1.2" />
     </svg>
   </a>
 );
@@ -148,8 +146,8 @@ const CtaFloatingScreens = ({
               variants={{ hidden: { opacity: 0, y: 16 }, shown: { opacity: 1, y: 0, transition: { duration: slow * 0.6, ease, delay: 0.15 } } }}
               className="flex flex-col gap-[1rem] lg:flex-row lg:gap-[1.5rem]"
             >
-              {primaryButton && <RollLink button={primaryButton} />}
-              {secondaryButton && <RollLink button={secondaryButton} />}
+              {primaryButton && <CtaButton button={primaryButton} variant="primary" />}
+              {secondaryButton && <CtaButton button={secondaryButton} variant="secondary" />}
             </motion.div>
           )}
         </motion.div>
