@@ -8,13 +8,14 @@ import TestimonialPortraitQuote from "@/components/sections/testimonial/Testimon
 import FaqHairlineIndex from "@/components/sections/faq/FaqHairlineIndex";
 import ContactUnderlineForm from "@/components/sections/contact/ContactUnderlineForm";
 import ModelStage from "@/components/kit/ModelStage";
+import VeyroLogo3D from "@/components/models/VeyroLogo3D";
 import LoaderWordmarkHandoff from "@/components/loaders/LoaderWordmarkHandoff";
 
 export default function HomePage() {
   return (
     <>
       <ModelStage
-        shape="arcs"
+        model={<VeyroLogo3D />}
         fixed={{
           sm: {
             y: 0.8,

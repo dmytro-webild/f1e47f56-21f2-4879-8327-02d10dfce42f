@@ -1,6 +1,6 @@
 import { useState, useId } from "react";
 import { AnimatePresence, motion, useReducedMotion } from "motion/react";
-import { Check, ChevronDown, ArrowUpRight, ShieldCheck, Clock, RefreshCw, FileText, Layers, Sparkles } from "lucide-react";
+import { Check, ChevronDown, ArrowUpRight, ShieldCheck, Clock, RefreshCw, FileText, Layers, Sparkles, Crown } from "lucide-react";
 import { clsx, type ClassValue } from "clsx";
 import { twMerge } from "tailwind-merge";
 
@@ -11,6 +11,7 @@ export type PricingTier = {
   name: string;
   tagline: string;
   popular?: boolean;
+  exclusive?: boolean;
   originalPrice?: string;
   price: string;
   renewal: string;
@@ -97,6 +98,7 @@ const DEFAULT_TIERS: PricingTier[] = [
     name: "Platinum",
     tagline: "Advanced Digital Experience",
     popular: false,
+    exclusive: true,
     price: "Rp2.500.000",
     renewal: "Renewal Rp1.500.000/tahun",
     pages: "Hingga 8 Halaman",
@@ -142,6 +144,7 @@ export default function PricingEditorialGrid({
 }: PricingEditorialGridProps) {
   const [expandedTiers, setExpandedTiers] = useState<Record<string, boolean>>({
     gold: false,
+    platinum: true,
   });
   const reduce = useReducedMotion();
   const id = useId();
@@ -189,56 +192,96 @@ export default function PricingEditorialGrid({
         </div>
 
         {/* Pricing Cards Grid */}
-        <div className="grid grid-cols-1 lg:grid-cols-3 gap-6 items-start">
+        <div className="grid grid-cols-1 lg:grid-cols-3 gap-6 items-stretch">
           {tiers.map((tier) => {
             const isExpanded = !!expandedTiers[tier.id];
             const isPopular = !!tier.popular;
+            const isPlatinum = tier.id === "platinum" || !!tier.exclusive;
 
             return (
               <div
                 key={tier.id}
                 className={cn(
                   "relative flex flex-col justify-between transition-all duration-300 p-6 sm:p-8 h-full border",
-                  isPopular
-                    ? "bg-[#263F35] text-[#F6F5F0] border-[#263F35] shadow-lg lg:-translate-y-2"
-                    : "bg-[#F6F5F0] text-[#202722] border-[#D9E0D6] hover:border-[#A7B9A5]"
+                  isPlatinum
+                    ? "bg-[#183126] text-[#F6F5F0] border-2 border-[#A7B9A5]/50 hover:border-[#A7B9A5] shadow-xl lg:-translate-y-2 ring-1 ring-[#A7B9A5]/20"
+                    : isPopular
+                    ? "bg-[#263F35] text-[#F6F5F0] border border-[#3D5A4B] shadow-md hover:border-[#A7B9A5]/60"
+                    : "bg-[#F6F5F0] text-[#202722] border border-[#D9E0D6] hover:border-[#A7B9A5]"
                 )}
               >
                 {/* Header Badge & Name */}
                 <div>
-                  <div className="flex items-center justify-between gap-2 mb-4">
+                  <div className="flex items-center justify-between gap-2 mb-4 flex-wrap">
                     <span
                       className={cn(
-                        "font-mono text-[length:var(--text-label)] uppercase tracking-wider",
-                        isPopular ? "text-[#A7B9A5]" : "text-[#466B55]"
+                        "font-mono text-[length:var(--text-label)] uppercase tracking-wider font-medium",
+                        isPlatinum
+                          ? "text-[#A7B9A5]"
+                          : isPopular
+                          ? "text-[#A7B9A5]"
+                          : "text-[#466B55]"
                       )}
                     >
                       {tier.tagline}
                     </span>
-                    {isPopular && (
+
+                    {isPlatinum ? (
+                      <span className="inline-flex items-center gap-1.5 px-3 py-1 bg-[#A7B9A5]/20 text-[#A7B9A5] border border-[#A7B9A5]/40 font-mono text-[11px] uppercase tracking-wider font-semibold">
+                        <Crown className="size-3 text-[#A7B9A5]" />
+                        Pilihan Eksklusif
+                      </span>
+                    ) : isPopular ? (
                       <span className="inline-flex items-center gap-1.5 px-3 py-1 bg-[#466B55] text-[#F6F5F0] font-mono text-[11px] uppercase tracking-wider font-medium">
                         <Sparkles className="size-3 text-[#A7B9A5]" />
                         Most Popular
                       </span>
-                    )}
+                    ) : null}
                   </div>
 
-                  <h3 className="text-[length:var(--text-h3)] font-serif mb-2 tracking-tight">
-                    {tier.name}
-                  </h3>
+                  <div className="flex items-baseline justify-between gap-2">
+                    <h3
+                      className={cn(
+                        "font-serif mb-2 tracking-tight",
+                        isPlatinum
+                          ? "text-[length:var(--text-h3)] text-[#F6F5F0] font-bold"
+                          : "text-[length:var(--text-h3)]"
+                      )}
+                    >
+                      {tier.name}
+                    </h3>
+                  </div>
 
                   {/* Price Block */}
-                  <div className="mt-4 pb-6 border-b border-current/15">
+                  <div
+                    className={cn(
+                      "mt-4 pb-6 border-b",
+                      isPlatinum
+                        ? "border-[#A7B9A5]/25"
+                        : isPopular
+                        ? "border-[#F6F5F0]/15"
+                        : "border-[#D9E0D6]"
+                    )}
+                  >
                     <div className="flex items-baseline gap-2 flex-wrap">
                       {tier.originalPrice && (
-                        <span className={cn(
-                          "line-through font-mono text-sm",
-                          isPopular ? "text-[#A7B9A5]" : "text-[#3D4B42]"
-                        )}>
+                        <span
+                          className={cn(
+                            "line-through font-mono text-sm",
+                            isPlatinum || isPopular ? "text-[#A7B9A5]" : "text-[#3D4B42]"
+                          )}
+                        >
                           {tier.originalPrice}
                         </span>
                       )}
-                      <span className="text-3xl sm:text-4xl font-serif font-medium">
+                      <span
+                        className={cn(
+                          "font-serif font-bold tracking-tight",
+                          isPlatinum
+                            ? "text-4xl sm:text-5xl text-[#F6F5F0]"
+                            : "text-3xl sm:text-4xl font-medium"
+                        )}
+                      >
                         {tier.price}
                       </span>
                     </div>
@@ -246,7 +289,7 @@ export default function PricingEditorialGrid({
                     <div
                       className={cn(
                         "flex items-center gap-1.5 mt-2 font-mono text-xs",
-                        isPopular ? "text-[#A7B9A5]" : "text-[#466B55]"
+                        isPlatinum || isPopular ? "text-[#A7B9A5]" : "text-[#466B55]"
                       )}
                     >
                       <RefreshCw className="size-3 shrink-0" />
@@ -255,22 +298,59 @@ export default function PricingEditorialGrid({
                   </div>
 
                   {/* Visible Key Highlights */}
-                  <div className="py-6 border-b border-current/15 space-y-3 font-sans text-sm">
+                  <div
+                    className={cn(
+                      "py-6 border-b space-y-3 font-sans text-sm",
+                      isPlatinum
+                        ? "border-[#A7B9A5]/25"
+                        : isPopular
+                        ? "border-[#F6F5F0]/15"
+                        : "border-[#D9E0D6]"
+                    )}
+                  >
                     <div className="flex items-center gap-2.5">
-                      <Layers className={cn("size-4 shrink-0", isPopular ? "text-[#A7B9A5]" : "text-[#466B55]")} />
-                      <span className="font-medium">{tier.pages}</span>
+                      <Layers
+                        className={cn(
+                          "size-4 shrink-0",
+                          isPlatinum || isPopular ? "text-[#A7B9A5]" : "text-[#466B55]"
+                        )}
+                      />
+                      <span className={cn("font-medium", isPlatinum && "text-[#F6F5F0]")}>
+                        {tier.pages}
+                      </span>
                     </div>
                     <div className="flex items-center gap-2.5">
-                      <FileText className={cn("size-4 shrink-0", isPopular ? "text-[#A7B9A5]" : "text-[#466B55]")} />
-                      <span>{tier.revisions}</span>
+                      <FileText
+                        className={cn(
+                          "size-4 shrink-0",
+                          isPlatinum || isPopular ? "text-[#A7B9A5]" : "text-[#466B55]"
+                        )}
+                      />
+                      <span className={isPlatinum ? "text-[#F6F5F0]" : undefined}>
+                        {tier.revisions}
+                      </span>
                     </div>
                     <div className="flex items-center gap-2.5">
-                      <Clock className={cn("size-4 shrink-0", isPopular ? "text-[#A7B9A5]" : "text-[#466B55]")} />
-                      <span>Estimasi {tier.duration}</span>
+                      <Clock
+                        className={cn(
+                          "size-4 shrink-0",
+                          isPlatinum || isPopular ? "text-[#A7B9A5]" : "text-[#466B55]"
+                        )}
+                      />
+                      <span className={isPlatinum ? "text-[#F6F5F0]" : undefined}>
+                        Estimasi {tier.duration}
+                      </span>
                     </div>
                     <div className="flex items-center gap-2.5">
-                      <ShieldCheck className={cn("size-4 shrink-0", isPopular ? "text-[#A7B9A5]" : "text-[#466B55]")} />
-                      <span>{tier.warranty}</span>
+                      <ShieldCheck
+                        className={cn(
+                          "size-4 shrink-0",
+                          isPlatinum || isPopular ? "text-[#A7B9A5]" : "text-[#466B55]"
+                        )}
+                      />
+                      <span className={isPlatinum ? "text-[#F6F5F0]" : undefined}>
+                        {tier.warranty}
+                      </span>
                     </div>
                   </div>
 
@@ -283,12 +363,16 @@ export default function PricingEditorialGrid({
                       aria-controls={`${id}-${tier.id}`}
                       className={cn(
                         "w-full flex items-center justify-between py-2 text-xs font-mono uppercase tracking-wider transition-colors",
-                        isPopular
+                        isPlatinum
+                          ? "text-[#A7B9A5] hover:text-[#F6F5F0]"
+                          : isPopular
                           ? "text-[#A7B9A5] hover:text-[#F6F5F0]"
                           : "text-[#466B55] hover:text-[#263F35]"
                       )}
                     >
-                      <span>{isExpanded ? "Sembunyikan Rincian Fitur" : "View Details (Fitur Lengkap)"}</span>
+                      <span>
+                        {isExpanded ? "Sembunyikan Rincian Fitur" : "View Details (Fitur Lengkap)"}
+                      </span>
                       <ChevronDown
                         className={cn(
                           "size-4 transition-transform duration-300",
@@ -309,8 +393,21 @@ export default function PricingEditorialGrid({
                         >
                           {tier.features.map((feature, idx) => (
                             <li key={idx} className="flex items-start gap-2.5 leading-snug">
-                              <Check className={cn("size-3.5 mt-0.5 shrink-0", isPopular ? "text-[#A7B9A5]" : "text-[#466B55]")} />
-                              <span className={isPopular ? "text-[#F6F5F0]/90" : "text-[#3D4B42]"}>
+                              <Check
+                                className={cn(
+                                  "size-3.5 mt-0.5 shrink-0",
+                                  isPlatinum || isPopular ? "text-[#A7B9A5]" : "text-[#466B55]"
+                                )}
+                              />
+                              <span
+                                className={
+                                  isPlatinum
+                                    ? "text-[#F6F5F0]"
+                                    : isPopular
+                                    ? "text-[#F6F5F0]/90"
+                                    : "text-[#3D4B42]"
+                                }
+                              >
                                 {feature}
                               </span>
                             </li>
@@ -328,8 +425,10 @@ export default function PricingEditorialGrid({
                     target="_blank"
                     rel="noopener noreferrer"
                     className={cn(
-                      "w-full inline-flex items-center justify-center gap-2 py-3 px-5 font-sans font-medium text-sm transition-all duration-200 group",
-                      isPopular
+                      "w-full inline-flex items-center justify-center gap-2 py-3.5 px-5 font-sans font-medium text-sm transition-all duration-200 group",
+                      isPlatinum
+                        ? "bg-[#F6F5F0] text-[#183126] font-semibold hover:bg-[#A7B9A5] hover:text-[#183126] shadow-md"
+                        : isPopular
                         ? "bg-[#F6F5F0] text-[#263F35] hover:bg-[#E8EDE5]"
                         : "bg-[#263F35] text-[#F6F5F0] hover:bg-[#466B55]"
                     )}
