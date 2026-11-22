@@ -217,7 +217,7 @@ export default function HomePage() {
               quote: "Veyro Studio berhasil menerjemahkan identitas Euforia Eatery ke dalam website yang sangat elegan dan responsif. Kepercayaan pelanggan kami meningkat pesat sejak tampilan baru ini diluncurkan.",
               name: "Dewi Wijaya",
               role: "Pendiri, Euforia Eatery",
-              imageSrc: "https://storage.googleapis.com/webild/users/user_3MPb0JT5Eznw1anwCu1RDDh9605/uploaded-1795337887660-q6komn8i.jpg",
+              imageSrc: "https://storage.googleapis.com/webild/users/user_3MPb0JT5Eznw1anwCu1RDDh9605/uploaded-1795337990408-63slylvj.mp4",
               imageAlt: "Image of asian businesswoman in suit holding mobile phone using smartphone app smiling at camera white background"
             },
             {
