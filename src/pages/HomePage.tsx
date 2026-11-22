@@ -68,7 +68,7 @@ export default function HomePage() {
             },
             {
               title: "Citeta",
-              category: "Sistem Informasi Web",
+              category: "UMKM NAIK KELAS",
               description: "Website sistem informasi terstruktur berbasis solusi untuk operasional efektif.",
               imageSrc: "https://img.b2bpic.net/free-photo/company-managers-gathering-meeting-room-watching-project-presentation-computer-monitor-together-holding-paper-report-business-communication-teamwork-concept_74855-11622.jpg",
               imageAlt: "Company managers gathering in meeting room, watching project presentation on computer monitor together, holding paper report. Business communication or teamwork concept"
