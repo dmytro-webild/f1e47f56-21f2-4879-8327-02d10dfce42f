@@ -56,16 +56,23 @@ const NavbarMenuPill = ({
         style={{ y: open ? "0%" : y }}
         className={`fixed inset-x-0 top-0 flex items-center justify-between py-[1rem] pl-[0.75rem] pr-[1.25rem] text-[#202722] bg-[#F6F5F0] border-b border-[#D9E0D6] lg:pl-[1.5rem] ${open ? "z-[56]" : "z-50"}`}
       >
-        <a href="#" className="flex min-w-0 items-center gap-[0.375rem]">
+        <a href="#" className="group flex min-w-0 items-center gap-[0.5rem]">
           {logoSrc ? (
-            <img src={logoSrc} alt="" loading="eager" decoding="async" className="size-[1.125rem] object-contain" />
+            <img src={logoSrc} alt="" loading="eager" decoding="async" className="size-[1.25rem] object-contain" />
           ) : (
-            <svg aria-hidden="true" viewBox="0 0 18 18" className="size-[1.125rem] shrink-0 fill-[#263F35]">
-              <path d="M0 9a9 9 0 0 1 9-9v5.5A3.5 3.5 0 0 0 5.5 9Z" />
-              <path d="M9 0a9 9 0 0 1 9 9h-5.5A3.5 3.5 0 0 0 9 5.5Z" opacity="0.55" />
-              <path d="M18 9a9 9 0 0 1-9 9v-5.5A3.5 3.5 0 0 0 12.5 9Z" />
-              <path d="M9 18a9 9 0 0 1-9-9h5.5A3.5 3.5 0 0 0 9 12.5Z" opacity="0.55" />
-            </svg>
+            <motion.div
+              animate={reduce ? undefined : { y: [0, -2, 0], rotate: [0, 5, 0] }}
+              transition={{ repeat: Infinity, duration: 4.5, ease: "easeInOut" }}
+              whileHover={{ scale: 1.15, rotate: 12 }}
+              className="relative shrink-0"
+            >
+              <svg aria-hidden="true" viewBox="0 0 18 18" className="size-[1.25rem] shrink-0 fill-[#263F35] drop-shadow-sm transition-transform duration-300">
+                <path d="M0 9a9 9 0 0 1 9-9v5.5A3.5 3.5 0 0 0 5.5 9Z" />
+                <path d="M9 0a9 9 0 0 1 9 9h-5.5A3.5 3.5 0 0 0 9 5.5Z" opacity="0.7" className="fill-[#466B55]" />
+                <path d="M18 9a9 9 0 0 1-9 9v-5.5A3.5 3.5 0 0 0 12.5 9Z" />
+                <path d="M9 18a9 9 0 0 1-9-9h5.5A3.5 3.5 0 0 0 9 12.5Z" opacity="0.7" className="fill-[#466B55]" />
+              </svg>
+            </motion.div>
           )}
           <div className="flex items-start">
             <p className="truncate text-[length:var(--text-body)] font-semibold leading-[1.5] tracking-[-0.025em] text-[#202722]">{brand}</p>
