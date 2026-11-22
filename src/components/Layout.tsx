@@ -18,6 +18,10 @@ export default function Layout() {
               href: "#services"
             },
             {
+              name: "Paket",
+              href: "#pricing"
+            },
+            {
               name: "Karya",
               href: "#gallery"
             },
@@ -46,6 +50,10 @@ export default function Layout() {
             {
               text: "Layanan",
               href: "#services"
+            },
+            {
+              text: "Paket",
+              href: "#pricing"
             },
             {
               text: "Karya",
