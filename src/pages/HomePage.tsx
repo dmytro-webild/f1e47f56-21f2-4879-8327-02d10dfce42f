@@ -2,6 +2,7 @@ import HeroShapeSplit from "@/components/sections/hero/HeroShapeSplit";
 import GalleryWordPanels from "@/components/sections/gallery/GalleryWordPanels";
 import ServicesGhostList from "@/components/sections/features/ServicesGhostList";
 import ProcessBentoPanels from "@/components/sections/features/ProcessBentoPanels";
+import PricingEditorialGrid from "@/components/sections/pricing/PricingEditorialGrid";
 import CtaFloatingScreens from "@/components/sections/statement/CtaFloatingScreens";
 import TestimonialPortraitQuote from "@/components/sections/testimonial/TestimonialPortraitQuote";
 import FaqHairlineIndex from "@/components/sections/faq/FaqHairlineIndex";
@@ -155,6 +156,10 @@ export default function HomePage() {
             }
           ]}
         />
+      </div>
+
+      <div id="pricing" data-webild-section="PricingEditorialGrid" data-webild-section-id="PricingEditorialGrid-1" data-section="pricing" className="relative z-[45] bg-[#F6F5F0]">
+        <PricingEditorialGrid />
       </div>
 
       <div id="cta" data-webild-section="CtaFloatingScreens" data-webild-section-id="CtaFloatingScreens-1" data-section="cta" className="relative z-[45] bg-[#F6F5F0]">
