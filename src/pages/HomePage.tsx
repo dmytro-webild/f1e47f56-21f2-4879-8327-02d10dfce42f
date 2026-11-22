@@ -244,7 +244,7 @@ export default function HomePage() {
           title="Hal yang sering ditanyakan"
           items={[
             {
-              title: "Mengapa website penting untuk UMKM?",
+              title: "Mengapa website penting untuk bisnismu?",
               description: "Website adalah media resmi yang membangun kredibilitas penuh tanpa bergantung pada algoritma media sosial."
             },
             {
