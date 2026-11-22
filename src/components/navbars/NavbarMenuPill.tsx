@@ -54,13 +54,13 @@ const NavbarMenuPill = ({
       <motion.nav
         aria-label="Main"
         style={{ y: open ? "0%" : y }}
-        className={`fixed inset-x-0 top-0 flex items-center justify-between py-[1.25rem] pl-[0.75rem] pr-[1.25rem] text-foreground lg:pl-[1.5rem] ${open ? "z-[56]" : "z-50"}`}
+        className={`fixed inset-x-0 top-0 flex items-center justify-between py-[1rem] pl-[0.75rem] pr-[1.25rem] text-[#202722] bg-[#F6F5F0] border-b border-[#D9E0D6] lg:pl-[1.5rem] ${open ? "z-[56]" : "z-50"}`}
       >
         <a href="#" className="flex min-w-0 items-center gap-[0.375rem]">
           {logoSrc ? (
             <img src={logoSrc} alt="" loading="eager" decoding="async" className="size-[1.125rem] object-contain" />
           ) : (
-            <svg aria-hidden="true" viewBox="0 0 18 18" className="size-[1.125rem] shrink-0 fill-current">
+            <svg aria-hidden="true" viewBox="0 0 18 18" className="size-[1.125rem] shrink-0 fill-[#263F35]">
               <path d="M0 9a9 9 0 0 1 9-9v5.5A3.5 3.5 0 0 0 5.5 9Z" />
               <path d="M9 0a9 9 0 0 1 9 9h-5.5A3.5 3.5 0 0 0 9 5.5Z" opacity="0.55" />
               <path d="M18 9a9 9 0 0 1-9 9v-5.5A3.5 3.5 0 0 0 12.5 9Z" />
@@ -68,8 +68,8 @@ const NavbarMenuPill = ({
             </svg>
           )}
           <div className="flex items-start">
-            <p className="truncate text-[length:var(--text-body)] leading-[1.5] tracking-[-0.025em]">{brand}</p>
-            {mark && <p className="text-[length:var(--text-label)] leading-none text-accent">{mark}</p>}
+            <p className="truncate text-[length:var(--text-body)] font-semibold leading-[1.5] tracking-[-0.025em] text-[#202722]">{brand}</p>
+            {mark && <p className="text-[length:var(--text-label)] leading-none text-[#A7B9A5]">{mark}</p>}
           </div>
         </a>
 
@@ -78,7 +78,7 @@ const NavbarMenuPill = ({
           aria-expanded={open}
           aria-label={open ? closeText : menuText}
           onClick={() => setOpen((value) => !value)}
-          className="flex h-[2.75rem] shrink-0 items-center justify-center gap-[0.5625rem] rounded-full border border-foreground px-[1.0625rem] transition-colors duration-300 hover:bg-foreground hover:text-background"
+          className="flex h-[2.5rem] shrink-0 items-center justify-center gap-[0.5625rem] rounded-full border border-[#263F35] bg-[#263F35] px-[1.25rem] text-[#F6F5F0] transition-colors duration-300 hover:bg-[#466B55] hover:border-[#466B55]"
         >
           <div aria-hidden="true" className="grid font-mono text-[length:var(--text-label)] uppercase leading-none">
             <p className={`col-start-1 row-start-1 transition-opacity duration-300 ${open ? "opacity-0" : "opacity-100"}`}>{menuText}</p>

@@ -41,8 +41,8 @@ const ServiceRow = ({ item, index }: { item: Service; index: number }) => {
         >
           {item.description && <p className="max-w-[30em] text-[length:var(--text-body)] leading-[1.45] text-muted-foreground">{item.description}</p>}
           {item.button && (
-            <a href={item.button.href} className="btn-link shrink-0 gap-3">
-              <p className="whitespace-nowrap">{item.button.text}</p>
+            <a href={item.button.href} className="btn-primary px-5 py-2 text-[length:var(--text-label)]">
+              <span className="btn-label">{item.button.text}</span>
               <svg aria-hidden="true" viewBox="0 0 12 12" className="size-3 shrink-0" fill="none" stroke="currentColor" strokeWidth="1.2">
                 <path d="M3 9l6-6M4 3h5v5" />
               </svg>
