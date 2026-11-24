@@ -80,7 +80,7 @@ const DEFAULT_TIERS: PricingTier[] = [
     warranty: "Garansi Bug 14 Hari",
     features: [
       "Domain & hosting (.com / .id)",
-      "1 Artikel SEO / bulan",
+      "1 Artikel SEO ",
       "Desain UI/UX Kustom eksklusif",
       "Galeri foto / karya interaktif",
       "Formulir kontak fungsional",
