@@ -106,11 +106,11 @@ export default function HomePage() {
           items={[
             {
               title: "Desain Website",
-              description: "Tampilan elegan, tata letak intuitif, dan identitas visual bisnis yang berkelas."
+              description: "Desain yang langsung ngomong 'ini serius' tanpa banyak kata.."
             },
             {
               title: "Pengembangan Web",
-              description: "Kode bersih, pemuatan cepat, dan respon sempurna di seluruh perangkat mobile."
+              description: "Website yang klien kalian bangga tunjukin ke orang."
             },
             {
               title: "Fondasi SEO",
