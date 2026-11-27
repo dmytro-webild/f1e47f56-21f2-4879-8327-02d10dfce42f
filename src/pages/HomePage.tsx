@@ -62,35 +62,35 @@ export default function HomePage() {
           title=""
           items={[
             {
-              title: "Bisnis Lokal",
+              title: "RESTORAN",
               category: "Desain Web Restoran",
-              description: "Pengalaman digital interaktif dan menggugah selera untuk bisnis kuliner modern.",
+              description: "Pengalaman digital interaktif dan menggugah selera untuk bisnis kuliner BISNIS.",
               imageSrc: "https://img.b2bpic.net/free-photo/portrait-young-young-woman-sitting-modern-cafe_171337-17121.jpg",
               imageAlt: "Portrait of a young young woman sitting at the modern cafe"
             },
             {
-              title: "Citeta",
+              title: "UMKM",
               category: "UMKM",
               description: "Website sistem informasi terstruktur berbasis solusi untuk operasional efektif.",
               imageSrc: "https://img.b2bpic.net/free-photo/company-managers-gathering-meeting-room-watching-project-presentation-computer-monitor-together-holding-paper-report-business-communication-teamwork-concept_74855-11622.jpg",
               imageAlt: "Company managers gathering in meeting room, watching project presentation on computer monitor together, holding paper report. Business communication or teamwork concept"
             },
             {
-              title: "StudioV",
+              title: "PORTOFOLIO",
               category: "Identitas Digital",
               description: "Presentasi portofolio premium dengan fokus pada tipografi editorial dan estetika bersih.",
               imageSrc: "https://img.b2bpic.net/free-photo/still-life-office-desk-mess_23-2150164797.jpg",
               imageAlt: "Still life of office desk  mess"
             },
             {
-              title: "Modern",
+              title: "BISNIS",
               category: "Website Bisnis",
               description: "Kehadiran digital yang kuat dan tepercaya untuk memperluas jangkauan pasar.",
               imageSrc: "https://img.b2bpic.net/free-photo/professional-programmer-working-late-dark-office_1098-18705.jpg",
               imageAlt: "Professional programmer working late in the dark office"
             },
             {
-              title: "Service",
+              title: "PLATFORM",
               category: "Platform Layanan",
               description: "Arsitektur informasi dan navigasi efisien untuk kenyamanan pengguna.",
               imageSrc: "https://img.b2bpic.net/free-photo/minimalist-display-ceramic-vases-white-gallery_23-2151984823.jpg",
@@ -222,9 +222,9 @@ export default function HomePage() {
               imageAlt: "Image of asian businesswoman in suit holding mobile phone using smartphone app smiling at camera white background"
             },
             {
-              quote: "Desain minimalis dan struktur SEO yang dibangun Fasya's Digital Agency membuat produk Citeta jauh lebih mudah ditemukan di Google. Proses kerjanya sangat terstruktur dan tepat waktu.",
+              quote: "Desain minimalis dan struktur SEO yang dibangun Fasya's Digital Agency membuat produk UMKM jauh lebih mudah ditemukan di Google. Proses kerjanya sangat terstruktur dan tepat waktu.",
               name: "Budi Gunawan",
-              role: "Pemilik, Citeta Studio",
+              role: "Pemilik, Studio UMKM",
               imageSrc: "https://img.b2bpic.net/free-photo/portrait-attractive-asian-student-with-textbook-dreamily-looking-away-library-young-man-studying-university_574295-2331.jpg",
               imageAlt: "Portrait of attractive asian student with textbook dreamily looking away in library Young man studying in university"
             },
