@@ -1,4 +1,4 @@
-@import url("https://fonts.googleapis.com/css2?family=Instrument+Serif&family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Bodoni+Moda:ital,opsz,wght@0,6..96,400..900;1,6..96,400..900&family=Instrument+Serif&family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500&display=swap");
 @import "tailwindcss";
 @import "./styles/animations.css";
@@ -48,6 +48,7 @@
   --font-heading: "Instrument Serif", "Helvetica Neue", Helvetica, Arial, sans-serif;
   --font-body: "Plus Jakarta Sans", "Helvetica Neue", Helvetica, Arial, sans-serif;
   --font-label: "IBM Plex Mono", ui-monospace, Menlo, monospace;
+  --font-serif: "Bodoni Moda", Georgia, serif;
   --heading-weight: 400;
   --heading-tracking: -0.045em;
   --heading-leading: 1;
@@ -108,6 +109,7 @@
 
   --font-sans: var(--font-body);
   --font-mono: var(--font-label);
+  --font-serif: var(--font-serif);
 
   --radius-sm: calc(var(--radius) - 4px);
   --radius-md: calc(var(--radius) - 2px);
