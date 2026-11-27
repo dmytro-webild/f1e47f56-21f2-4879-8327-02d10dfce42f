@@ -62,7 +62,7 @@ export default function HomePage() {
           title=""
           items={[
             {
-              title: "Euforia",
+              title: "Bisnis Lokal",
               category: "Desain Web Restoran",
               description: "Pengalaman digital interaktif dan menggugah selera untuk bisnis kuliner modern.",
               imageSrc: "https://img.b2bpic.net/free-photo/portrait-young-young-woman-sitting-modern-cafe_171337-17121.jpg",
