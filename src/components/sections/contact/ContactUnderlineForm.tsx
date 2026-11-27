@@ -137,6 +137,74 @@ const ContactUnderlineForm = ({
               </motion.div>
             )}
           </motion.form>
+
+          {/* Contact Details Card */}
+          <motion.div
+            initial={live ? { opacity: 0, y: 24 } : false}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: slow * 0.6, ease, delay: 0.2 }}
+            className="kit-card flex flex-col justify-between gap-8 p-6 lg:col-span-4 lg:p-8"
+          >
+            <div className="space-y-6">
+              <span className="font-mono text-[length:var(--text-label)] uppercase tracking-[var(--label-tracking)] text-[#466B55]">
+                Hubungi Kami Direct
+              </span>
+
+              <h3 className="font-serif text-[length:var(--text-h3)] leading-tight text-[#202722]">
+                Siap Membawa Bisnis Anda ke Tingkat Selanjutnya?
+              </h3>
+
+              <div className="space-y-5 pt-2 font-mono text-sm">
+                <div className="space-y-1">
+                  <p className="text-xs uppercase text-[#3D4B42]/70 tracking-wider">Instagram</p>
+                  <a
+                    href="https://instagram.com/fasyasagency"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="group flex items-center justify-between text-[#202722] hover:text-[#263F35] font-semibold transition-colors"
+                  >
+                    <span>@fasyasagency</span>
+                    <span className="text-xs transition-transform group-hover:translate-x-1">→</span>
+                  </a>
+                </div>
+
+                <div className="h-px bg-foreground/15" />
+
+                <div className="space-y-1">
+                  <p className="text-xs uppercase text-[#3D4B42]/70 tracking-wider">WhatsApp</p>
+                  <a
+                    href="https://wa.me/6285930134439"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="group flex items-center justify-between text-[#202722] hover:text-[#263F35] font-semibold transition-colors"
+                  >
+                    <span>085930134439</span>
+                    <span className="text-xs transition-transform group-hover:translate-x-1">→</span>
+                  </a>
+                </div>
+
+                <div className="h-px bg-foreground/15" />
+
+                <div className="space-y-1">
+                  <p className="text-xs uppercase text-[#3D4B42]/70 tracking-wider">Email</p>
+                  <a
+                    href="mailto:fasyasagency@gmail.com"
+                    className="group flex items-center justify-between text-[#202722] hover:text-[#263F35] font-semibold transition-colors"
+                  >
+                    <span className="break-all">fasyasagency@gmail.com</span>
+                    <span className="text-xs transition-transform group-hover:translate-x-1">→</span>
+                  </a>
+                </div>
+              </div>
+            </div>
+
+            <div className="pt-4 border-t border-foreground/15">
+              <p className="text-xs text-[#3D4B42] leading-relaxed">
+                Respon cepat via WhatsApp & Email. Kami siap berkonsultasi mengenai proyek digital Anda.
+              </p>
+            </div>
+          </motion.div>
         </div>
       </div>
     </section>

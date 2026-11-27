@@ -84,6 +84,18 @@ export default function FooterWordmarkLanding({
           </ul>
         )}
 
+        <div className="mt-[clamp(1.5rem,1.8vw,2.5rem)] flex flex-wrap items-center gap-x-8 gap-y-3 pt-4 border-t border-border font-mono text-xs uppercase text-[#202722]">
+          <a href="https://instagram.com/fasyasagency" target="_blank" rel="noopener noreferrer" className="btn-link normal-case">
+            Instagram @fasyasagency
+          </a>
+          <a href="https://wa.me/6285930134439" target="_blank" rel="noopener noreferrer" className="btn-link normal-case">
+            WhatsApp 085930134439
+          </a>
+          <a href="mailto:fasyasagency@gmail.com" className="btn-link normal-case">
+            fasyasagency@gmail.com
+          </a>
+        </div>
+
         <div className="mt-[clamp(1.5rem,1.2rem+1.2vw,2.25rem)] grid grid-cols-1 gap-[8px] border-t border-border py-[28px] font-mono text-[length:var(--text-label)] uppercase leading-[1.5] text-muted-foreground lg:grid-cols-3 lg:items-center">
           <div aria-hidden="true" className="hidden lg:block" />
           {tagline && <p className="text-balance lg:text-center">{tagline}</p>}

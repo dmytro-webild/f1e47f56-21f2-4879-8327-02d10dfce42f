@@ -64,7 +64,7 @@ const DEFAULT_TIERS: PricingTier[] = [
       "Favicon & branding dasar",
       "Siap rilis & deployment",
     ],
-    waUrl: "https://wa.me/6283836114515?text=Halo%20Fasya's%20Digital%20Agency%2C%20saya%20tertarik%20dengan%20paket%20Silver",
+    waUrl: "https://wa.me/6285930134439?text=Halo%20Fasya's%20Digital%20Agency%2C%20saya%20tertarik%20dengan%20paket%20Silver",
   },
   {
     id: "gold",
@@ -91,7 +91,7 @@ const DEFAULT_TIERS: PricingTier[] = [
       "Animasi gulir (scroll animations)",
       "Siap rilis & deployment",
     ],
-    waUrl: "https://wa.me/6283836114515?text=Halo%20Fasya's%20Digital%20Agency%2C%20saya%20tertarik%20dengan%20paket%20Gold",
+    waUrl: "https://wa.me/6285930134439?text=Halo%20Fasya's%20Digital%20Agency%2C%20saya%20tertarik%20dengan%20paket%20Gold",
   },
   {
     id: "platinum",
@@ -117,7 +117,7 @@ const DEFAULT_TIERS: PricingTier[] = [
       "Optimasi performa & kecepatan tinggi",
       "Dukungan & komunikasi prioritas",
     ],
-    waUrl: "https://wa.me/6283836114515?text=Halo%20Fasya's%20Digital%20Agency%2C%20saya%20tertarik%20dengan%20paket%20Platinum",
+    waUrl: "https://wa.me/6285930134439?text=Halo%20Fasya's%20Digital%20Agency%2C%20saya%20tertarik%20dengan%20paket%20Platinum",
   },
 ];
 
@@ -131,7 +131,7 @@ const DEFAULT_ADDON: PricingAddon = {
     "Meta title & meta description teroptimasi",
     "Konten ramah SEO & relevan dengan audiens target",
   ],
-  waUrl: "https://wa.me/6283836114515?text=Halo%20Fasya's%20Digital%20Agency%2C%20saya%20tertarik%20dengan%20Add-on%20Artikel%20SEO",
+  waUrl: "https://wa.me/6285930134439?text=Halo%20Fasya's%20Digital%20Agency%2C%20saya%20tertarik%20dengan%20Add-on%20Artikel%20SEO",
 };
 
 export default function PricingEditorialGrid({
@@ -204,10 +204,10 @@ export default function PricingEditorialGrid({
                 className={cn(
                   "relative flex flex-col justify-between transition-all duration-300 p-6 sm:p-8 h-full border-2",
                   isPlatinum
-                    ? "bg-gradient-to-b from-[#251638] via-[#1E122E] to-[#170E24] text-[#FAF5FF] border-[#A855F7]/70 hover:border-[#C084FC] shadow-xl ring-1 ring-[#A855F7]/30"
+                    ? "bg-gradient-to-b from-[#251638]/90 via-[#1E122E]/85 to-[#170E24]/90 backdrop-blur-md text-[#FAF5FF] border-[#A855F7]/70 hover:border-[#C084FC] shadow-xl ring-1 ring-[#A855F7]/30"
                     : isGold
-                    ? "bg-gradient-to-b from-[#2A200F] via-[#231B0C] to-[#1E170A] text-[#FFFBEB] border-[#F59E0B]/70 hover:border-[#FBBF24] shadow-xl lg:-translate-y-2 ring-1 ring-[#F59E0B]/30"
-                    : "bg-gradient-to-b from-[#F8FAFC] to-[#E2E8F0] text-[#0F172A] border-[#CBD5E1] hover:border-[#94A3B8] shadow-md"
+                    ? "bg-gradient-to-b from-[#2A200F]/90 via-[#231B0C]/85 to-[#1E170A]/90 backdrop-blur-md text-[#FFFBEB] border-[#F59E0B]/70 hover:border-[#FBBF24] shadow-xl lg:-translate-y-2 ring-1 ring-[#F59E0B]/30"
+                    : "bg-gradient-to-b from-[#F8FAFC]/85 to-[#E2E8F0]/80 backdrop-blur-md text-[#0F172A] border-[#CBD5E1] hover:border-[#94A3B8] shadow-md"
                 )}
               >
                 {/* Header Badge & Name */}
@@ -456,7 +456,7 @@ export default function PricingEditorialGrid({
 
         {/* Add-on Banner Card */}
         {addon && (
-          <div className="p-6 sm:p-8 bg-[#E8EDE5] border border-[#D9E0D6] flex flex-col md:flex-row md:items-center justify-between gap-6">
+          <div className="p-6 sm:p-8 bg-[#E8EDE5]/75 backdrop-blur-md border border-[#D9E0D6] flex flex-col md:flex-row md:items-center justify-between gap-6">
             <div className="space-y-2 max-w-2xl">
               <div className="flex items-center gap-3 flex-wrap">
                 <span className="font-mono text-xs uppercase tracking-wider px-2.5 py-0.5 bg-[#263F35] text-[#F6F5F0]">
