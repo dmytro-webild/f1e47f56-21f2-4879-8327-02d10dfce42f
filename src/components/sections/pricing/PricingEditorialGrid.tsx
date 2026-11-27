@@ -71,7 +71,7 @@ const DEFAULT_TIERS: PricingTier[] = [
     name: "Gold",
     tagline: "Professional Business Website",
     popular: true,
-    price: "1.4 M",
+    price: "1.4M",
     renewal: "Renewal Rp999.000/tahun",
     pages: "Hingga 5 Halaman",
     revisions: "3x Revisi",
