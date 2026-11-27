@@ -71,7 +71,7 @@ const DEFAULT_TIERS: PricingTier[] = [
     name: "Gold",
     tagline: "Professional Business Website",
     popular: true,
-    price: "1.4M",
+    price: "1.4 M",
     renewal: "Renewal Rp999.000/tahun",
     pages: "Hingga 5 Halaman",
     revisions: "3x Revisi",
@@ -279,7 +279,16 @@ export default function PricingEditorialGrid({
                           {tier.originalPrice}
                         </span>
                       )}
-                      <span className="font-serif font-bold text-3xl sm:text-4xl tracking-tight text-[#0F172A]">
+                      <span
+                        className={cn(
+                          "font-serif font-bold text-3xl sm:text-4xl tracking-tight",
+                          isPlatinum
+                            ? "text-[#FAF5FF]"
+                            : isGold
+                            ? "text-[#FFFBEB]"
+                            : "text-[#0F172A]"
+                        )}
+                      >
                         {tier.price}
                       </span>
                     </div>
