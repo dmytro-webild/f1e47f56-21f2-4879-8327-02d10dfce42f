@@ -35,8 +35,8 @@ export default function Layout() {
             }
           ]}
           contact={{
-            text: "hello@fasyasagency.com",
-            href: "mailto:hello@fasyasagency.com"
+            text: "fasyasagency@gmail.com",
+            href: "mailto:fasyasagency@gmail.com"
           }}
         />
       </header>

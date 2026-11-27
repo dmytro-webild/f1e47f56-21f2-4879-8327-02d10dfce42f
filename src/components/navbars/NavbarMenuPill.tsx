@@ -29,7 +29,6 @@ const NavbarMenuPill = ({
     { name: "Pricing", href: "#pricing" },
     { name: "Contact", href: "#contact" },
   ],
-  contact = { text: "hello@ostra.studio", href: "mailto:hello@ostra.studio" },
   menuText = "Menu",
   closeText = "Close",
 }: NavbarMenuPillProps) => {
@@ -54,7 +53,7 @@ const NavbarMenuPill = ({
       <motion.nav
         aria-label="Main"
         style={{ y: open ? "0%" : y }}
-        className={`fixed inset-x-0 top-0 flex items-center justify-between py-[1rem] pl-[0.75rem] pr-[1.25rem] text-[#202722] bg-[#F6F5F0] border-b border-[#D9E0D6] lg:pl-[1.5rem] ${open ? "z-[56]" : "z-50"}`}
+        className={`fixed inset-x-0 top-0 flex items-center justify-between py-[1rem] pl-[0.75rem] pr-[1.25rem] text-[#202722] bg-[#F6F5F0]/80 backdrop-blur-md border-b border-[#D9E0D6] lg:pl-[1.5rem] ${open ? "z-[56]" : "z-50"}`}
       >
         <a href="#" className="group flex min-w-0 items-center gap-[0.5rem]">
           {logoSrc ? (
@@ -131,19 +130,25 @@ const NavbarMenuPill = ({
                 </li>
               ))}
             </ul>
-            {contact && (
-              <motion.div
-                initial={reduce ? false : { opacity: 0, y: 12 }}
-                animate={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.8, ease: EXPO_OUT, delay: 0.4 }}
-                className="mx-auto mt-auto flex w-[var(--container)] justify-between gap-[1rem] pt-[2rem] font-mono text-[length:var(--text-label)] uppercase"
-              >
-                <a href={contact.href} className="btn-link normal-case">
-                  {contact.text}
+            <motion.div
+              initial={reduce ? false : { opacity: 0, y: 12 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.8, ease: EXPO_OUT, delay: 0.4 }}
+              className="mx-auto mt-auto flex w-[var(--container)] flex-wrap items-center justify-between gap-4 pt-[2rem] font-mono text-[length:var(--text-label)] uppercase"
+            >
+              <div className="flex flex-wrap items-center gap-6">
+                <a href="https://instagram.com/fasyasagency" target="_blank" rel="noopener noreferrer" className="btn-link normal-case">
+                  Instagram @fasyasagency
                 </a>
-                <p className="text-muted-foreground">{brand}</p>
-              </motion.div>
-            )}
+                <a href="https://wa.me/6285930134439" target="_blank" rel="noopener noreferrer" className="btn-link normal-case">
+                  WA 085930134439
+                </a>
+                <a href="mailto:fasyasagency@gmail.com" className="btn-link normal-case">
+                  fasyasagency@gmail.com
+                </a>
+              </div>
+              <p className="text-muted-foreground">{brand}</p>
+            </motion.div>
           </motion.div>
         )}
       </AnimatePresence>

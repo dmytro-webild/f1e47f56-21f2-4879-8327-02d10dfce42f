@@ -38,7 +38,7 @@ export default function HomePage() {
         brand="Fasya's Digital Agency"
       />
 
-      <div id="hero" data-webild-section="HeroShapeSplit" data-webild-section-id="HeroShapeSplit-1" data-section="hero" className="relative z-[45] bg-[#F6F5F0]">
+      <div id="hero" data-webild-section="HeroShapeSplit" data-webild-section-id="HeroShapeSplit-1" data-section="hero" className="relative z-[45] bg-transparent">
         <HeroShapeSplit
           tag="00 / INTRO"
           title="Bisnis yang baik, layak hadir dengan baik."
@@ -100,7 +100,7 @@ export default function HomePage() {
         />
       </div>
 
-      <div id="services" data-webild-section="ServicesGhostList" data-webild-section-id="ServicesGhostList-1" data-section="services" className="relative z-[45] bg-[#F6F5F0]">
+      <div id="services" data-webild-section="ServicesGhostList" data-webild-section-id="ServicesGhostList-1" data-section="services" className="relative z-[45] bg-transparent">
         <ServicesGhostList
           tag="Layanan Utama"
           items={[
@@ -133,7 +133,7 @@ export default function HomePage() {
         />
       </div>
 
-      <div id="process" data-webild-section="ProcessBentoPanels" data-webild-section-id="ProcessBentoPanels-1" data-section="process" className="relative z-[45] bg-[#E8EDE5]">
+      <div id="process" data-webild-section="ProcessBentoPanels" data-webild-section-id="ProcessBentoPanels-1" data-section="process" className="relative z-[45] bg-transparent">
         <ProcessBentoPanels
           tag="04 / Pendekatan"
           title="Rapi dari awal hingga rilis"
@@ -159,11 +159,11 @@ export default function HomePage() {
         />
       </div>
 
-      <div id="pricing" data-webild-section="PricingEditorialGrid" data-webild-section-id="PricingEditorialGrid-1" data-section="pricing" className="relative z-[45] bg-[#F6F5F0]">
+      <div id="pricing" data-webild-section="PricingEditorialGrid" data-webild-section-id="PricingEditorialGrid-1" data-section="pricing" className="relative z-[45] bg-transparent">
         <PricingEditorialGrid />
       </div>
 
-      <div id="cta" data-webild-section="CtaFloatingScreens" data-webild-section-id="CtaFloatingScreens-1" data-section="cta" className="relative z-[45] bg-[#F6F5F0]">
+      <div id="cta" data-webild-section="CtaFloatingScreens" data-webild-section-id="CtaFloatingScreens-1" data-section="cta" className="relative z-[45] bg-transparent">
         <CtaFloatingScreens
           tag="Mulai Proyek"
           title="Setiap hal baik dimulai dari percakapan."
@@ -209,7 +209,7 @@ export default function HomePage() {
         />
       </div>
 
-      <div id="testimonial" data-webild-section="TestimonialPortraitQuote" data-webild-section-id="TestimonialPortraitQuote-1" data-section="testimonial" className="relative z-[45] bg-[#F6F5F0]">
+      <div id="testimonial" data-webild-section="TestimonialPortraitQuote" data-webild-section-id="TestimonialPortraitQuote-1" data-section="testimonial" className="relative z-[45] bg-transparent">
         <TestimonialPortraitQuote
           label="Kata Klien Kami"
           title="Dipercaya Oleh Bisnis Berdedikasi"
@@ -239,7 +239,7 @@ export default function HomePage() {
         />
       </div>
 
-      <div id="faq" data-webild-section="FaqHairlineIndex" data-webild-section-id="FaqHairlineIndex-1" data-section="faq" className="relative z-[45] bg-[#E8EDE5]">
+      <div id="faq" data-webild-section="FaqHairlineIndex" data-webild-section-id="FaqHairlineIndex-1" data-section="faq" className="relative z-[45] bg-transparent">
         <FaqHairlineIndex
           tag="06 / PERTANYAAN"
           title="Hal yang sering ditanyakan"
@@ -268,7 +268,7 @@ export default function HomePage() {
         />
       </div>
 
-      <div id="contact" data-webild-section="ContactUnderlineForm" data-webild-section-id="ContactUnderlineForm-1" data-section="contact" className="relative z-[45] bg-[#F6F5F0]">
+      <div id="contact" data-webild-section="ContactUnderlineForm" data-webild-section-id="ContactUnderlineForm-1" data-section="contact" className="relative z-[45] bg-transparent">
         <ContactUnderlineForm
           title="Mulai percakapan proyek Anda"
           fields={[
@@ -282,7 +282,7 @@ export default function HomePage() {
               name: "email",
               label: "Email",
               type: "email",
-              placeholder: "hello@fasyasagency.com",
+              placeholder: "fasyasagency@gmail.com",
               required: true
             },
             {
