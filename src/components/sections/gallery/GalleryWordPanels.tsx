@@ -29,26 +29,24 @@ const DEFAULT_ITEMS: Work[] = [
 
 const COPIES = 4;
 
-function Header({ label, title, kit, reduce }: { label: string; title: string; kit: KitMotion; reduce: boolean | null }) {
-  const words = title.trim().split(/\s+/).filter(Boolean);
-  const steps = Math.max(1, label.length);
+function Header({ label, title, kit, reduce }: { label: string; title?: string; kit: KitMotion; reduce: boolean | null }) {
+  const words = title ? title.trim().split(/\s+/).filter(Boolean) : [];
+  const steps = Math.max(1, label?.length ?? 0);
   const typed = steps * 0.02;
   return (
     <div className="flex flex-col gap-[1.5rem] lg:flex-row lg:items-end lg:justify-between lg:gap-[var(--gap)]">
       <div className="flex min-w-0 flex-col gap-[1.75rem] lg:gap-[2.5rem]">
         {label && (
           <div className="flex items-center gap-[14px] font-mono text-[length:var(--text-label)] uppercase leading-[1.5]">
-            {label && (
-              <motion.p
-                initial={reduce ? false : { clipPath: "inset(0 100% 0 0)" }}
-                whileInView={{ clipPath: "inset(0 0% 0 0)" }}
-                viewport={{ once: true }}
-                transition={{ duration: typed, ease: (t: number) => Math.floor(t * steps) / steps }}
-                className="whitespace-nowrap text-foreground"
-              >
-                {label}
-              </motion.p>
-            )}
+            <motion.p
+              initial={reduce ? false : { clipPath: "inset(0 100% 0 0)" }}
+              whileInView={{ clipPath: "inset(0 0% 0 0)" }}
+              viewport={{ once: true }}
+              transition={{ duration: typed, ease: (t: number) => Math.floor(t * steps) / steps }}
+              className="whitespace-nowrap text-foreground"
+            >
+              {label}
+            </motion.p>
           </div>
         )}
         {words.length > 0 && (
