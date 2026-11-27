@@ -64,12 +64,12 @@ export default function HomePage() {
             {
               title: "RESTORAN",
               category: "Desain Web Restoran",
-              description: "Pengalaman digital interaktif dan menggugah selera untuk bisnis kuliner BISNIS.",
+              description: "Pengalaman digital interaktif dan menggugah selera untuk bisnis kuliner JASA.",
               imageSrc: "https://img.b2bpic.net/free-photo/portrait-young-young-woman-sitting-modern-cafe_171337-17121.jpg",
               imageAlt: "Portrait of a young young woman sitting at the modern cafe"
             },
             {
-              title: "UMKM",
+              title: "BISNIS",
               category: "UMKM",
               description: "Website sistem informasi terstruktur berbasis solusi untuk operasional efektif.",
               imageSrc: "https://img.b2bpic.net/free-photo/company-managers-gathering-meeting-room-watching-project-presentation-computer-monitor-together-holding-paper-report-business-communication-teamwork-concept_74855-11622.jpg",
@@ -83,8 +83,8 @@ export default function HomePage() {
               imageAlt: "Still life of office desk  mess"
             },
             {
-              title: "BISNIS",
-              category: "Website Bisnis",
+              title: "JASA",
+              category: "Website Jasa",
               description: "Kehadiran digital yang kuat dan tepercaya untuk memperluas jangkauan pasar.",
               imageSrc: "https://img.b2bpic.net/free-photo/professional-programmer-working-late-dark-office_1098-18705.jpg",
               imageAlt: "Professional programmer working late in the dark office"
