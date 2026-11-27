@@ -7,7 +7,7 @@ export default function Layout() {
     <div className="relative isolate min-h-svh flex flex-col bg-background text-foreground" data-button="default" data-card="filled" data-pattern="none">
       <header data-webild-section="Header">
         <NavbarMenuPill
-          brand="VEYRO STUDIO"
+          brand="Fasya's Digital Agency"
           navItems={[
             {
               name: "Beranda",
@@ -35,8 +35,8 @@ export default function Layout() {
             }
           ]}
           contact={{
-            text: "hello@veyro.studio",
-            href: "mailto:hello@veyro.studio"
+            text: "hello@fasyasagency.com",
+            href: "mailto:hello@fasyasagency.com"
           }}
         />
       </header>
@@ -45,7 +45,7 @@ export default function Layout() {
       </main>
       <footer data-webild-section="Footer" data-section="footer" className="relative z-[45]">
         <FooterWordmarkLanding
-          brand="VEYRO STUDIO"
+          brand="Fasya's Digital Agency"
           links={[
             {
               text: "Layanan",
@@ -69,7 +69,7 @@ export default function Layout() {
             }
           ]}
           tagline="Setiap hal baik dimulai dari sebuah percakapan."
-          copyright="© 2026 Veyro Studio. Hak cipta dilindungi."
+          copyright="© 2026 Fasya's Digital Agency. Hak cipta dilindungi."
         />
       </footer>
     </div>

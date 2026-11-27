@@ -64,7 +64,7 @@ const DEFAULT_TIERS: PricingTier[] = [
       "Favicon & branding dasar",
       "Siap rilis & deployment",
     ],
-    waUrl: "https://wa.me/6283836114515?text=Halo%20VEYRO%20STUDIO%2C%20saya%20tertarik%20dengan%20paket%20Silver",
+    waUrl: "https://wa.me/6283836114515?text=Halo%20Fasya's%20Digital%20Agency%2C%20saya%20tertarik%20dengan%20paket%20Silver",
   },
   {
     id: "gold",
@@ -91,7 +91,7 @@ const DEFAULT_TIERS: PricingTier[] = [
       "Animasi gulir (scroll animations)",
       "Siap rilis & deployment",
     ],
-    waUrl: "https://wa.me/6283836114515?text=Halo%20VEYRO%20STUDIO%2C%20saya%20tertarik%20dengan%20paket%20Gold",
+    waUrl: "https://wa.me/6283836114515?text=Halo%20Fasya's%20Digital%20Agency%2C%20saya%20tertarik%20dengan%20paket%20Gold",
   },
   {
     id: "platinum",
@@ -117,7 +117,7 @@ const DEFAULT_TIERS: PricingTier[] = [
       "Optimasi performa & kecepatan tinggi",
       "Dukungan & komunikasi prioritas",
     ],
-    waUrl: "https://wa.me/6283836114515?text=Halo%20VEYRO%20STUDIO%2C%20saya%20tertarik%20dengan%20paket%20Platinum",
+    waUrl: "https://wa.me/6283836114515?text=Halo%20Fasya's%20Digital%20Agency%2C%20saya%20tertarik%20dengan%20paket%20Platinum",
   },
 ];
 
@@ -131,7 +131,7 @@ const DEFAULT_ADDON: PricingAddon = {
     "Meta title & meta description teroptimasi",
     "Konten ramah SEO & relevan dengan audiens target",
   ],
-  waUrl: "https://wa.me/6283836114515?text=Halo%20VEYRO%20STUDIO%2C%20saya%20tertarik%20dengan%20Add-on%20Artikel%20SEO",
+  waUrl: "https://wa.me/6283836114515?text=Halo%20Fasya's%20Digital%20Agency%2C%20saya%20tertarik%20dengan%20Add-on%20Artikel%20SEO",
 };
 
 export default function PricingEditorialGrid({
@@ -195,19 +195,19 @@ export default function PricingEditorialGrid({
         <div className="grid grid-cols-1 lg:grid-cols-3 gap-6 items-stretch">
           {tiers.map((tier) => {
             const isExpanded = !!expandedTiers[tier.id];
-            const isPopular = !!tier.popular;
+            const isGold = tier.id === "gold" || !!tier.popular;
             const isPlatinum = tier.id === "platinum" || !!tier.exclusive;
 
             return (
               <div
                 key={tier.id}
                 className={cn(
-                  "relative flex flex-col justify-between transition-all duration-300 p-6 sm:p-8 h-full border",
+                  "relative flex flex-col justify-between transition-all duration-300 p-6 sm:p-8 h-full border-2",
                   isPlatinum
-                    ? "bg-[#183126] text-[#F6F5F0] border-2 border-[#A7B9A5]/50 hover:border-[#A7B9A5] shadow-xl lg:-translate-y-2 ring-1 ring-[#A7B9A5]/20"
-                    : isPopular
-                    ? "bg-[#263F35] text-[#F6F5F0] border border-[#3D5A4B] shadow-md hover:border-[#A7B9A5]/60"
-                    : "bg-[#F6F5F0] text-[#202722] border border-[#D9E0D6] hover:border-[#A7B9A5]"
+                    ? "bg-gradient-to-b from-[#251638] via-[#1E122E] to-[#170E24] text-[#FAF5FF] border-[#A855F7]/70 hover:border-[#C084FC] shadow-xl ring-1 ring-[#A855F7]/30"
+                    : isGold
+                    ? "bg-gradient-to-b from-[#2A200F] via-[#231B0C] to-[#1E170A] text-[#FFFBEB] border-[#F59E0B]/70 hover:border-[#FBBF24] shadow-xl lg:-translate-y-2 ring-1 ring-[#F59E0B]/30"
+                    : "bg-gradient-to-b from-[#F8FAFC] to-[#E2E8F0] text-[#0F172A] border-[#CBD5E1] hover:border-[#94A3B8] shadow-md"
                 )}
               >
                 {/* Header Badge & Name */}
@@ -217,23 +217,23 @@ export default function PricingEditorialGrid({
                       className={cn(
                         "font-mono text-[length:var(--text-label)] uppercase tracking-wider font-medium",
                         isPlatinum
-                          ? "text-[#A7B9A5]"
-                          : isPopular
-                          ? "text-[#A7B9A5]"
-                          : "text-[#466B55]"
+                          ? "text-[#C084FC]"
+                          : isGold
+                          ? "text-[#FBBF24]"
+                          : "text-[#475569]"
                       )}
                     >
                       {tier.tagline}
                     </span>
 
                     {isPlatinum ? (
-                      <span className="inline-flex items-center gap-1.5 px-3 py-1 bg-[#A7B9A5]/20 text-[#A7B9A5] border border-[#A7B9A5]/40 font-mono text-[11px] uppercase tracking-wider font-semibold">
-                        <Crown className="size-3 text-[#A7B9A5]" />
+                      <span className="inline-flex items-center gap-1.5 px-3 py-1 bg-[#A855F7]/25 text-[#D8B4FE] border border-[#A855F7]/50 font-mono text-[11px] uppercase tracking-wider font-semibold">
+                        <Crown className="size-3 text-[#C084FC]" />
                         Pilihan Eksklusif
                       </span>
-                    ) : isPopular ? (
-                      <span className="inline-flex items-center gap-1.5 px-3 py-1 bg-[#466B55] text-[#F6F5F0] font-mono text-[11px] uppercase tracking-wider font-medium">
-                        <Sparkles className="size-3 text-[#A7B9A5]" />
+                    ) : isGold ? (
+                      <span className="inline-flex items-center gap-1.5 px-3 py-1 bg-[#F59E0B] text-[#1E170A] font-mono text-[11px] uppercase tracking-wider font-semibold">
+                        <Sparkles className="size-3 text-[#1E170A]" />
                         Most Popular
                       </span>
                     ) : null}
@@ -242,10 +242,12 @@ export default function PricingEditorialGrid({
                   <div className="flex items-baseline justify-between gap-2">
                     <h3
                       className={cn(
-                        "font-serif mb-2 tracking-tight",
+                        "font-serif font-bold text-[length:var(--text-h3)] tracking-tight mb-2",
                         isPlatinum
-                          ? "text-[length:var(--text-h3)] text-[#F6F5F0] font-bold"
-                          : "text-[length:var(--text-h3)]"
+                          ? "text-[#FAF5FF]"
+                          : isGold
+                          ? "text-[#FFFBEB]"
+                          : "text-[#0F172A]"
                       )}
                     >
                       {tier.name}
@@ -257,10 +259,10 @@ export default function PricingEditorialGrid({
                     className={cn(
                       "mt-4 pb-6 border-b",
                       isPlatinum
-                        ? "border-[#A7B9A5]/25"
-                        : isPopular
-                        ? "border-[#F6F5F0]/15"
-                        : "border-[#D9E0D6]"
+                        ? "border-[#A855F7]/25"
+                        : isGold
+                        ? "border-[#F59E0B]/25"
+                        : "border-[#CBD5E1]"
                     )}
                   >
                     <div className="flex items-baseline gap-2 flex-wrap">
@@ -268,7 +270,11 @@ export default function PricingEditorialGrid({
                         <span
                           className={cn(
                             "line-through font-mono text-sm",
-                            isPlatinum || isPopular ? "text-[#A7B9A5]" : "text-[#3D4B42]"
+                            isPlatinum
+                              ? "text-[#E9D5FF]/80"
+                              : isGold
+                              ? "text-[#FCD34D]/80"
+                              : "text-[#64748B]"
                           )}
                         >
                           {tier.originalPrice}
@@ -276,10 +282,12 @@ export default function PricingEditorialGrid({
                       )}
                       <span
                         className={cn(
-                          "font-serif font-bold tracking-tight",
+                          "font-serif font-bold text-3xl sm:text-4xl tracking-tight",
                           isPlatinum
-                            ? "text-4xl sm:text-5xl text-[#F6F5F0]"
-                            : "text-3xl sm:text-4xl font-medium"
+                            ? "text-[#E9D5FF]"
+                            : isGold
+                            ? "text-[#FBBF24]"
+                            : "text-[#0F172A]"
                         )}
                       >
                         {tier.price}
@@ -289,7 +297,11 @@ export default function PricingEditorialGrid({
                     <div
                       className={cn(
                         "flex items-center gap-1.5 mt-2 font-mono text-xs",
-                        isPlatinum || isPopular ? "text-[#A7B9A5]" : "text-[#466B55]"
+                        isPlatinum
+                          ? "text-[#D8B4FE]"
+                          : isGold
+                          ? "text-[#FCD34D]"
+                          : "text-[#475569]"
                       )}
                     >
                       <RefreshCw className="size-3 shrink-0" />
@@ -302,20 +314,20 @@ export default function PricingEditorialGrid({
                     className={cn(
                       "py-6 border-b space-y-3 font-sans text-sm",
                       isPlatinum
-                        ? "border-[#A7B9A5]/25"
-                        : isPopular
-                        ? "border-[#F6F5F0]/15"
-                        : "border-[#D9E0D6]"
+                        ? "border-[#A855F7]/25"
+                        : isGold
+                        ? "border-[#F59E0B]/25"
+                        : "border-[#CBD5E1]"
                     )}
                   >
                     <div className="flex items-center gap-2.5">
                       <Layers
                         className={cn(
                           "size-4 shrink-0",
-                          isPlatinum || isPopular ? "text-[#A7B9A5]" : "text-[#466B55]"
+                          isPlatinum ? "text-[#C084FC]" : isGold ? "text-[#F59E0B]" : "text-[#475569]"
                         )}
                       />
-                      <span className={cn("font-medium", isPlatinum && "text-[#F6F5F0]")}>
+                      <span className={cn("font-medium", isPlatinum ? "text-[#FAF5FF]" : isGold ? "text-[#FFFBEB]" : "text-[#0F172A]")}>
                         {tier.pages}
                       </span>
                     </div>
@@ -323,10 +335,10 @@ export default function PricingEditorialGrid({
                       <FileText
                         className={cn(
                           "size-4 shrink-0",
-                          isPlatinum || isPopular ? "text-[#A7B9A5]" : "text-[#466B55]"
+                          isPlatinum ? "text-[#C084FC]" : isGold ? "text-[#F59E0B]" : "text-[#475569]"
                         )}
                       />
-                      <span className={isPlatinum ? "text-[#F6F5F0]" : undefined}>
+                      <span className={isPlatinum ? "text-[#FAF5FF]" : isGold ? "text-[#FFFBEB]" : "text-[#1E293B]"}>
                         {tier.revisions}
                       </span>
                     </div>
@@ -334,10 +346,10 @@ export default function PricingEditorialGrid({
                       <Clock
                         className={cn(
                           "size-4 shrink-0",
-                          isPlatinum || isPopular ? "text-[#A7B9A5]" : "text-[#466B55]"
+                          isPlatinum ? "text-[#C084FC]" : isGold ? "text-[#F59E0B]" : "text-[#475569]"
                         )}
                       />
-                      <span className={isPlatinum ? "text-[#F6F5F0]" : undefined}>
+                      <span className={isPlatinum ? "text-[#FAF5FF]" : isGold ? "text-[#FFFBEB]" : "text-[#1E293B]"}>
                         Estimasi {tier.duration}
                       </span>
                     </div>
@@ -345,10 +357,10 @@ export default function PricingEditorialGrid({
                       <ShieldCheck
                         className={cn(
                           "size-4 shrink-0",
-                          isPlatinum || isPopular ? "text-[#A7B9A5]" : "text-[#466B55]"
+                          isPlatinum ? "text-[#C084FC]" : isGold ? "text-[#F59E0B]" : "text-[#475569]"
                         )}
                       />
-                      <span className={isPlatinum ? "text-[#F6F5F0]" : undefined}>
+                      <span className={isPlatinum ? "text-[#FAF5FF]" : isGold ? "text-[#FFFBEB]" : "text-[#1E293B]"}>
                         {tier.warranty}
                       </span>
                     </div>
@@ -364,10 +376,10 @@ export default function PricingEditorialGrid({
                       className={cn(
                         "w-full flex items-center justify-between py-2 text-xs font-mono uppercase tracking-wider transition-colors",
                         isPlatinum
-                          ? "text-[#A7B9A5] hover:text-[#F6F5F0]"
-                          : isPopular
-                          ? "text-[#A7B9A5] hover:text-[#F6F5F0]"
-                          : "text-[#466B55] hover:text-[#263F35]"
+                          ? "text-[#D8B4FE] hover:text-[#FAF5FF]"
+                          : isGold
+                          ? "text-[#FCD34D] hover:text-[#FFFBEB]"
+                          : "text-[#475569] hover:text-[#0F172A]"
                       )}
                     >
                       <span>
@@ -389,23 +401,23 @@ export default function PricingEditorialGrid({
                           animate={{ height: "auto", opacity: 1 }}
                           exit={{ height: 0, opacity: 0 }}
                           transition={{ duration: 0.35, ease: [0.19, 1, 0.22, 1] }}
-                          className="overflow-hidden pt-3 space-y-2.5 text-xs sm:text-sm"
+                          className="overflow-hidden pt-3 space-y-2.5 text-xs sm:text-sm font-sans"
                         >
                           {tier.features.map((feature, idx) => (
                             <li key={idx} className="flex items-start gap-2.5 leading-snug">
                               <Check
                                 className={cn(
                                   "size-3.5 mt-0.5 shrink-0",
-                                  isPlatinum || isPopular ? "text-[#A7B9A5]" : "text-[#466B55]"
+                                  isPlatinum ? "text-[#C084FC]" : isGold ? "text-[#F59E0B]" : "text-[#475569]"
                                 )}
                               />
                               <span
                                 className={
                                   isPlatinum
-                                    ? "text-[#F6F5F0]"
-                                    : isPopular
-                                    ? "text-[#F6F5F0]/90"
-                                    : "text-[#3D4B42]"
+                                    ? "text-[#F3E8FF]/90"
+                                    : isGold
+                                    ? "text-[#FEF3C7]/90"
+                                    : "text-[#334155]"
                                 }
                               >
                                 {feature}
@@ -425,12 +437,12 @@ export default function PricingEditorialGrid({
                     target="_blank"
                     rel="noopener noreferrer"
                     className={cn(
-                      "w-full inline-flex items-center justify-center gap-2 py-3.5 px-5 font-sans font-medium text-sm transition-all duration-200 group",
+                      "w-full inline-flex items-center justify-center gap-2 py-3.5 px-5 font-sans font-semibold text-sm transition-all duration-200 group shadow-md",
                       isPlatinum
-                        ? "bg-[#F6F5F0] text-[#183126] font-semibold hover:bg-[#A7B9A5] hover:text-[#183126] shadow-md"
-                        : isPopular
-                        ? "bg-[#F6F5F0] text-[#263F35] hover:bg-[#E8EDE5]"
-                        : "bg-[#263F35] text-[#F6F5F0] hover:bg-[#466B55]"
+                        ? "bg-[#A855F7] text-[#FAF5FF] hover:bg-[#9333EA]"
+                        : isGold
+                        ? "bg-[#F59E0B] text-[#1E170A] hover:bg-[#FBBF24]"
+                        : "bg-[#0F172A] text-[#F8FAFC] hover:bg-[#334155]"
                     )}
                   >
                     <span>Pilih Paket {tier.name}</span>

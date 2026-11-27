@@ -35,7 +35,7 @@ export default function HomePage() {
       />
 
       <LoaderWordmarkHandoff
-        brand="VEYRO STUDIO"
+        brand="Fasya's Digital Agency"
       />
 
       <div id="hero" data-webild-section="HeroShapeSplit" data-webild-section-id="HeroShapeSplit-1" data-section="hero" className="relative z-[45] bg-[#F6F5F0]">
@@ -56,10 +56,10 @@ export default function HomePage() {
         />
       </div>
 
-      <div id="gallery" data-webild-section="GalleryWordPanels" data-webild-section-id="GalleryWordPanels-1" data-section="gallery" className="relative z-[45] bg-[#E8EDE5]" data-scene>
+      <div id="gallery" data-webild-section="GalleryWordPanels" data-webild-section-id="GalleryWordPanels-1" data-section="gallery" className="relative z-[45] bg-transparent" data-scene>
         <GalleryWordPanels
           label="02 / Karya Pilihan"
-          title="Kualitas dalam setiap piksel"
+          title=""
           items={[
             {
               title: "Euforia",
@@ -215,21 +215,21 @@ export default function HomePage() {
           title="Dipercaya Oleh Bisnis Berdedikasi"
           items={[
             {
-              quote: 'Veyro Studio berhasil menerjemahkan identitas Euforia Eatery ke dalam website yang sangat elegan dan responsif. "Websitenya bagus, tante suka makasii yaa" Itu kata mereka. Kepercayaan pelanggan kami meningkat pesat sejak tampilan baru ini diluncurkan.',
+              quote: 'Fasya\'s Digital Agency berhasil menerjemahkan identitas Euforia Eatery ke dalam website yang sangat elegan dan responsif. "Websitenya bagus, tante suka makasii yaa" Itu kata mereka. Kepercayaan pelanggan kami meningkat pesat sejak tampilan baru ini diluncurkan.',
               name: "Euforia Eatery",
               role: "Pendiri, Euforia Eatery",
               imageSrc: "https://storage.googleapis.com/webild/users/user_3MPb0JT5Eznw1anwCu1RDDh9605/uploaded-1795337990408-63slylvj.mp4",
               imageAlt: "Image of asian businesswoman in suit holding mobile phone using smartphone app smiling at camera white background"
             },
             {
-              quote: "Desain minimalis dan struktur SEO yang dibangun Veyro Studio membuat produk Citeta jauh lebih mudah ditemukan di Google. Proses kerjanya sangat terstruktur dan tepat waktu.",
+              quote: "Desain minimalis dan struktur SEO yang dibangun Fasya's Digital Agency membuat produk Citeta jauh lebih mudah ditemukan di Google. Proses kerjanya sangat terstruktur dan tepat waktu.",
               name: "Budi Gunawan",
               role: "Pemilik, Citeta Studio",
               imageSrc: "https://img.b2bpic.net/free-photo/portrait-attractive-asian-student-with-textbook-dreamily-looking-away-library-young-man-studying-university_574295-2331.jpg",
               imageAlt: "Portrait of attractive asian student with textbook dreamily looking away in library Young man studying in university"
             },
             {
-              quote: "Situs bisnis kami kini terasa jauh lebih profesional dan tepercaya. Sentuhan desain editorial dari Veyro Studio benar-benar membedakan kami dari kompetitor di industri.",
+              quote: "Situs bisnis kami kini terasa jauh lebih profesional dan tepercaya. Sentuhan desain editorial dari Fasya's Digital Agency benar-benar membedakan kami dari kompetitor di industri.",
               name: "Nadia Hidayat",
               role: "Founder, Brand Lokal",
               imageSrc: "https://img.b2bpic.net/free-photo/copy-space-woman-her-phone-concept_23-2148286062.jpg",
@@ -262,7 +262,7 @@ export default function HomePage() {
             },
             {
               title: "Berapa investasi pembuatan website?",
-              description: "Layanan pembuatan website profesional Veyro Studio dimulai dari harga Rp 5.000.000 hingga Rp 8.500.000."
+              description: "Layanan pembuatan website profesional Fasya's Digital Agency dimulai dari harga Rp 5.000.000 hingga Rp 8.500.000."
             }
           ]}
         />
@@ -282,7 +282,7 @@ export default function HomePage() {
               name: "email",
               label: "Email",
               type: "email",
-              placeholder: "hello@veyro.studio",
+              placeholder: "hello@fasyasagency.com",
               required: true
             },
             {
